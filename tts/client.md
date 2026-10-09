@@ -2,6 +2,8 @@
 
 [Back to index](README.md)
 
+Implementation: [python.tts.api.client](https://github.com/lambdawalker/python.tts.api.client). Start with its [README](https://github.com/lambdawalker/python.tts.api.client/blob/main/README.md) and [wire assumptions](https://github.com/lambdawalker/python.tts.api.client/blob/main/docs/contracts.md). The counterpart is [python.tts.api.server](https://github.com/lambdawalker/python.tts.api.server).
+
 The client is a lightweight HTTP consumer for Python applications, scripts, and agent runtimes. It does not load Torch, CUDA, model weights, or host MCP.
 
 ## Public surface
@@ -25,7 +27,7 @@ Generation returns a job handle promptly. A separate `wait()` convenience operat
 
 ## Illustrative use
 
-This is a proposed SDK interface, not runnable installed-package documentation.
+This illustrates the implemented SDK interface. Import `TTSClient` from `tts_api_client`; configure the token and a real adapter supporting the requested profile/voice before running it. See the linked client quickstart for a complete setup.
 
 ```python
 with TTSClient(base_url="http://qwen-server:8000", api_key=token) as client:

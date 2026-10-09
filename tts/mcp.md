@@ -2,9 +2,11 @@
 
 [Back to index](README.md)
 
+Implementation: [server MCP interface](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/mcp.py). Enable the optional `mcp` extra and `--mcp`; see [deployment/authentication](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/deployment.md).
+
 ## Placement
 
-MCP is an optional interface of the shared server package, mounted at `/mcp` in the proposed deployment. It calls the same application services as HTTP.
+MCP is an optional interface of the shared server package, mounted at `/mcp` when enabled in the shared server deployment. It calls the same application services as HTTP.
 
 Individual model adapters provide capabilities, guidance, and inference. They do not duplicate MCP tools. The Python client uses HTTP and has no required MCP dependency.
 

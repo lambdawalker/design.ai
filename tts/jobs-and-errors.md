@@ -2,6 +2,8 @@
 
 [Back to index](README.md)
 
+Implementation: [shared service](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/service.py), [SQLite store](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/store.py), and [operational limits/retention](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/deployment.md).
+
 ## Job lifecycle
 
 Generation submissions return HTTP 202 or the equivalent MCP structured job result.

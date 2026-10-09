@@ -2,6 +2,8 @@
 
 [Back to index](README.md)
 
+Concrete interface: [server adapter.py](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/adapter.py). See the [adapter authoring guide](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/adapters.md) and [fake adapter](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/fake.py). The fake produces silence and is not a model integration.
+
 An adapter integrates one engine with shared application services. It does not host HTTP or MCP routes.
 
 ## Required responsibilities
@@ -31,7 +33,7 @@ A profile identifies checkpoint, checkpoint revision, adapter version, and relev
 | design_voice | Optional description-driven candidate generation |
 | convert_voice | Optional source-audio transformation |
 
-These names express responsibilities, not a finalized Python abstract base class. Workers provide asset access, progress emission, and cancellation signals. The adapter must not create a competing queue or persistence layer.
+These names express responsibilities. The linked Python adapter interface is the concrete implementation contract; `execute` dispatches supported generation operations. Workers provide asset access, progress emission, and cancellation signals. The adapter must not create a competing queue or persistence layer.
 
 ## Native mapping versus rewriting
 

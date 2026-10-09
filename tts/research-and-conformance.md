@@ -2,6 +2,8 @@
 
 [Back to index](README.md)
 
+Implementation tests: [shared server suite](https://github.com/lambdawalker/python.tts.api.server/tree/main/tests) and [client suite](https://github.com/lambdawalker/python.tts.api.client/tree/main/tests). See the server [validation boundaries](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/testing.md). These exercise the fake adapter and protocol behavior; actual engine/GPU validation remains separate.
+
 Research snapshot: 2026-10-09. These findings inform the design; they are not GPU benchmarks, guarantees of DGX Spark compatibility, or permanent capability manifests.
 
 ## Existing forks

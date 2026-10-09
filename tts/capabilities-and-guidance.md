@@ -2,6 +2,8 @@
 
 [Back to index](README.md)
 
+Implementation: [profile definitions](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/adapter.py) and [shared discovery/validation services](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/service.py). Exact model guidance remains the adapter responsibility.
+
 Capabilities answer what can be requested. Guidance explains how a caller should construct good inputs. The caller, whether an agent or person, owns text, native tags, and instructions.
 
 ## Capability scope

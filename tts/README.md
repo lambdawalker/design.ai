@@ -1,6 +1,6 @@
 # Interchangeable local TTS services
 
-Design baseline: 2026-10-09. Status: architecture agreed in discussion; detailed contracts proposed for implementation. No runtime implementation is included here.
+Design baseline: 2026-10-09. Status: central architecture and contract, with server and client implementations maintained in the repositories below. No runtime code is included in design.ai.
 
 ## Goal
 
@@ -25,7 +25,15 @@ People and AI agents are responsible for constructing model-appropriate inputs. 
 - [Chatterbox fork](https://github.com/lambdawalker/dgxspark.chatterbox)
 - [Qwen3-TTS fork](https://github.com/lambdawalker/dgxspark.qwen3TTS)
 
-Implementation repository names suggested during discussion are `python.apexfission.tts.server` and `python.apexfission.tts.client`. They are proposed names, not dependencies that already exist. This folder in design.ai is the central specification.
+## Implementation sources
+
+- [python.tts.api.server](https://github.com/lambdawalker/python.tts.api.server): shared HTTP/MCP services, adapter interface, persistent jobs/assets/voices, executable schemas and conformance tests.
+- [python.tts.api.client](https://github.com/lambdawalker/python.tts.api.client): synchronous/asynchronous Python HTTP client, uploads/downloads, job handles and SSE recovery.
+- [Server wire schemas](https://github.com/lambdawalker/python.tts.api.server/tree/main/schemas), [adapter guide](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/adapters.md), and [deployment guide](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/deployment.md).
+
+These names supersede the earlier proposed `python.apexfission.tts.*` names. This folder remains the central architectural specification. Concrete install commands, package versions and deployment limitations belong in the implementation repositories.
+
+The initial shared server ships an explicit fake adapter that produces silent WAVs for contract testing. Qwen, Fish and Chatterbox still need engine-local adapters and hardware validation; a passing server/client test is not evidence of real-model inference.
 
 ## Agreed decisions
 
@@ -43,4 +51,4 @@ Earlier proposals for a portable tag language, automatic adaptation, and a rewri
 
 ## Scope
 
-This design defines component boundaries and the initial contract. Executable OpenAPI/JSON Schemas, SDK implementation, packaging, authentication deployment profiles, and GPU validation are implementation deliverables. Future additions include a standalone MCP-to-HTTP bridge and duplex conversational audio sessions; neither is required for the first implementation.
+This design defines component boundaries and the initial contract. Executable OpenAPI/JSON Schemas and server packaging are maintained in the server repository; the SDK is maintained in the client repository. The initial server uses a static bearer-token deployment profile, one inference worker and SQLite persistence. GPU validation remains an engine-integration deliverable. Future additions include a standalone MCP-to-HTTP bridge and duplex conversational audio sessions; neither is required for the first implementation.
