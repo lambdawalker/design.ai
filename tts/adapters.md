@@ -47,7 +47,7 @@ Known unsupported controls return errors. Native runtime errors are translated i
 
 - Fish: adapt existing local synthesis and reference behavior. Native tags remain the caller's responsibility. Do not infer that every upstream S2 capability is exposed by the installed local serving path.
 - Chatterbox: preserve distinctions among standard, multilingual, Turbo, and other installed variants. Reuse the intent of existing job persistence, but conform to the shared contract. Voice conversion is distinct from reference registration.
-- Qwen3-TTS: define separate Base, CustomVoice, and VoiceDesign profiles, with size-specific capabilities. Do not advertise instruction control for every checkpoint. Reference transcript requirements depend on cloning mode.
+- Qwen3-TTS: the [adapter implementation](https://github.com/lambdawalker/dgxspark.qwen3TTS/blob/40c096b4b759b3b253a6f15922615ce4d09d7817/qwen_tts_api/adapter.py) provides Base 0.6B/1.7B, CustomVoice 0.6B/1.7B and VoiceDesign 1.7B profiles. Only 1.7B CustomVoice accepts speech instructions. Base transcript requirements depend on cloning mode; conversion remains unsupported. See [deployment and hardware validation](https://github.com/lambdawalker/dgxspark.qwen3TTS/blob/40c096b4b759b3b253a6f15922615ce4d09d7817/docs/api.md).
 
 ## Concurrency and provenance
 

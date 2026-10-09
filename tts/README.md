@@ -29,11 +29,12 @@ People and AI agents are responsible for constructing model-appropriate inputs. 
 
 - [python.tts.api.server](https://github.com/lambdawalker/python.tts.api.server): shared HTTP/MCP services, adapter interface, persistent jobs/assets/voices, executable schemas and conformance tests.
 - [python.tts.api.client](https://github.com/lambdawalker/python.tts.api.client): synchronous/asynchronous Python HTTP client, uploads/downloads, job handles and SSE recovery.
+- [Qwen adapter](https://github.com/lambdawalker/dgxspark.qwen3TTS/blob/40c096b4b759b3b253a6f15922615ce4d09d7817/qwen_tts_api/adapter.py) and [DGX Spark deployment guide](https://github.com/lambdawalker/dgxspark.qwen3TTS/blob/40c096b4b759b3b253a6f15922615ce4d09d7817/docs/api.md): native Base, CustomVoice and VoiceDesign integration; [implementation PR](https://github.com/lambdawalker/dgxspark.qwen3TTS/pull/1).
 - [Server wire schemas](https://github.com/lambdawalker/python.tts.api.server/tree/main/schemas), [adapter guide](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/adapters.md), and [deployment guide](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/deployment.md).
 
 These names supersede the earlier proposed `python.apexfission.tts.*` names. This folder remains the central architectural specification. Concrete install commands, package versions and deployment limitations belong in the implementation repositories.
 
-The initial shared server ships an explicit fake adapter that produces silent WAVs for contract testing. Qwen, Fish and Chatterbox still need engine-local adapters and hardware validation; a passing server/client test is not evidence of real-model inference.
+The initial shared server ships an explicit fake adapter that produces silent WAVs for contract testing. The Qwen integration above adds engine-local adapters and CPU conformance tests; DGX Spark inference and acoustic validation remain required. Fish and Chatterbox still need shared-contract adapters. A passing server/client test is not evidence of real-model inference.
 
 ## Agreed decisions
 
