@@ -66,11 +66,16 @@ MCP clients bootstrap with the HTTP session endpoint, then attach the same beare
 
 ## Implementation and validation
 
-- [Shared server](https://github.com/lambdawalker/python.tts.api.server): persisted credentials,
-  CLI modes, middleware and session endpoints.
-- [Python client](https://github.com/lambdawalker/python.tts.api.client): matching sync/async
-  lifecycle and automatic creation.
-- [Qwen deployment](https://github.com/lambdawalker/dgxspark.qwen3TTS): dependency pins and launch guide.
+- [Shared server session store](https://github.com/lambdawalker/python.tts.api.server/blob/9257bc16e60be92e8418455453c3f00bd6ac0f13/src/tts_api_server/sessions.py)
+  and [conformance tests](https://github.com/lambdawalker/python.tts.api.server/blob/9257bc16e60be92e8418455453c3f00bd6ac0f13/tests/test_sessions.py):
+  persisted credentials, CLI modes, middleware and session endpoints.
+- [Python client session tests](https://github.com/lambdawalker/python.tts.api.client/blob/f82cd3e2546e58eb419a9e0e8a79ab398fc6a24b/tests/test_sessions.py):
+  matching sync/async lifecycle and automatic creation.
+- [Qwen deployment guide](https://github.com/lambdawalker/dgxspark.qwen3TTS/blob/6a4a3f00ac4b4456bc9dc888a3a9428d4a558d70/docs/api.md):
+  dependency pins, launch instructions and client examples.
+
+These immutable source links identify the coordinated implementation; see each repository
+for later revisions.
 
 Acceptance covers cross-session status/events/cancellation/download/voice denial, caller-scoped
 idempotency, restart persistence, expiration, revocation, admission bounds, HTTP/MCP parity,
