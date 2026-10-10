@@ -2,6 +2,8 @@
 
 [Back to index](README.md)
 
+Implementation ownership: [shared server](https://github.com/lambdawalker/python.tts.api.server) and [Python client](https://github.com/lambdawalker/python.tts.api.client). Engine adapters remain in the model repositories.
+
 ## Components
 
 | Component | Owns | Does not own |

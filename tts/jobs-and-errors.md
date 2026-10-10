@@ -2,6 +2,8 @@
 
 [Back to index](README.md)
 
+Implementation: [shared service](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/service.py), [SQLite store](https://github.com/lambdawalker/python.tts.api.server/blob/main/src/tts_api_server/store.py), and [operational limits/retention](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/deployment.md).
+
 ## Job lifecycle
 
 Generation submissions return HTTP 202 or the equivalent MCP structured job result.
@@ -79,3 +81,8 @@ Asset deletion/retention must not remove references needed by active jobs. Remov
 Use /v1 for the initial major HTTP contract. Clients reject unsupported major versions. Additive response fields may be ignored by older clients; unknown request fields must be rejected by servers. Breaking field meanings or operation semantics require a new major contract.
 
 Audio streaming is optional and distinct from SSE. Do not label complete buffered output as native incremental generation. Duplex sessions and their transport are future scope.
+
+## Anonymous session access
+
+See [anonymous sessions](sessions.md) for token issuance, resource isolation, expiration,
+revocation and client lifecycle. Shared `--no-auth` access remains a separate mode.

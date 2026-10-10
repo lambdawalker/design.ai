@@ -2,6 +2,8 @@
 
 [Back to index](README.md)
 
+Implementation tests: [shared server suite](https://github.com/lambdawalker/python.tts.api.server/tree/main/tests) and [client suite](https://github.com/lambdawalker/python.tts.api.client/tree/main/tests). See the server [validation boundaries](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/testing.md). These exercise the fake adapter and protocol behavior; actual engine/GPU validation remains separate.
+
 Research snapshot: 2026-10-09. These findings inform the design; they are not GPU benchmarks, guarantees of DGX Spark compatibility, or permanent capability manifests.
 
 ## Existing forks
@@ -10,7 +12,7 @@ Research snapshot: 2026-10-09. These findings inform the design; they are not GP
 | --- | --- | --- |
 | [Fish Speech](https://github.com/lambdawalker/dgxspark.fish-speech/blob/main/docs/en/local-api-client.md) | Local audio responses, reference management, streaming path | Wrap in shared services; preserve documented native inputs |
 | [Chatterbox](https://github.com/lambdawalker/dgxspark.chatterbox/blob/master/docs/http-api.md) | Persisted jobs, SSE reconnection, reference voices, conversion | Converge on shared job and error contracts |
-| [Qwen3-TTS](https://github.com/lambdawalker/dgxspark.qwen3TTS) | Separate Python synthesis/design/cloning workflows | Expose checkpoint-specific profiles |
+| [Qwen3-TTS](https://github.com/lambdawalker/dgxspark.qwen3TTS/blob/40c096b4b759b3b253a6f15922615ce4d09d7817/docs/api.md) | Shared HTTP/MCP adapter with five checkpoint profiles; [CPU conformance tests](https://github.com/lambdawalker/dgxspark.qwen3TTS/tree/40c096b4b759b3b253a6f15922615ce4d09d7817/tests/api) | Run the hardware smoke example on DGX Spark; GPU/acoustic results remain unverified |
 
 Recheck these links and the actual adapter source when implementation begins; repositories evolve.
 

@@ -2,7 +2,9 @@
 
 [Back to index](README.md)
 
-The shared server is the application boundary. Adapters supply inference behavior; HTTP and MCP expose the same services. This is a proposed v1 contract, not an existing endpoint inventory.
+Implementation: [python.tts.api.server](https://github.com/lambdawalker/python.tts.api.server), with [OpenAPI/request schemas](https://github.com/lambdawalker/python.tts.api.server/tree/main/schemas), [wire contract](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/contracts.md) and [deployment profile](https://github.com/lambdawalker/python.tts.api.server/blob/main/docs/deployment.md).
+
+The shared server is the application boundary. Adapters supply inference behavior; HTTP and MCP expose the same services. This v1 contract is implemented by the shared server; consult its executable schemas for exact wire fields.
 
 ## Endpoint contract
 
@@ -77,3 +79,8 @@ Voice conversion accepts `model`, `source_asset_id`, target `voice`, `output`, a
 ## Access and storage
 
 Apply identical authorization to HTTP, MCP, jobs, voices, and assets. Credentials belong in connection configuration, not model tool arguments or logs. Enforce upload and queue limits. Asset downloads must respect access control and expiration. The concrete authentication profile is selected during deployment implementation.
+
+## Anonymous session access
+
+See [anonymous sessions](sessions.md) for token issuance, resource isolation, expiration,
+revocation and client lifecycle. Shared `--no-auth` access remains a separate mode.
