@@ -66,3 +66,8 @@ Changing the base URL preserves API mechanics. Callers still refresh guidance an
 ## MCP relationship
 
 An AI host that supports MCP can connect directly to the server's MCP interface without importing this client. A future standalone MCP bridge may use this library to reach HTTP-only deployments, but is not part of the initial SDK.
+
+## Anonymous session access
+
+See [anonymous sessions](sessions.md) for token issuance, resource isolation, expiration,
+revocation and client lifecycle. Shared `--no-auth` access remains a separate mode.

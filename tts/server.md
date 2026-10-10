@@ -79,3 +79,8 @@ Voice conversion accepts `model`, `source_asset_id`, target `voice`, `output`, a
 ## Access and storage
 
 Apply identical authorization to HTTP, MCP, jobs, voices, and assets. Credentials belong in connection configuration, not model tool arguments or logs. Enforce upload and queue limits. Asset downloads must respect access control and expiration. The concrete authentication profile is selected during deployment implementation.
+
+## Anonymous session access
+
+See [anonymous sessions](sessions.md) for token issuance, resource isolation, expiration,
+revocation and client lifecycle. Shared `--no-auth` access remains a separate mode.

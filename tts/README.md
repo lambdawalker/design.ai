@@ -18,6 +18,7 @@ People and AI agents are responsible for constructing model-appropriate inputs. 
 6. [Capabilities and guidance](capabilities-and-guidance.md)
 7. [Jobs, errors, and compatibility](jobs-and-errors.md)
 8. [Research and conformance](research-and-conformance.md)
+9. [Anonymous sessions](sessions.md)
 
 ## Initial integrations
 

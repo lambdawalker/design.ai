@@ -67,3 +67,8 @@ Use the selected MCP SDK's supported protocol transport and authentication behav
 A separate local MCP process could wrap the Python HTTP client for HTTP-only deployments. That is an alternative integration, not the primary placement and not a second implementation of application logic.
 
 Reference: [MCP server concepts](https://modelcontextprotocol.io/specification/latest/server/index).
+
+## Anonymous session access
+
+See [anonymous sessions](sessions.md) for token issuance, resource isolation, expiration,
+revocation and client lifecycle. Shared `--no-auth` access remains a separate mode.
